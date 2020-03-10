@@ -105,4 +105,3 @@ public class Tile extends StackPane {
                 '}';
     }
 }
-
