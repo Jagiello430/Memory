@@ -11,8 +11,8 @@ import java.util.Objects;
 public class Tile extends StackPane {
 
     Button button = new Button("");
-    private int score = 100;
-    private int clickCount = 2;
+    private static int score = 100;
+    private static int clickCount = 2;
     private static Tile selected;
 
     public Tile(ImageView imageView,int id) {
@@ -26,7 +26,7 @@ public class Tile extends StackPane {
         getChildren().add(button);
 
         button.setOnAction(event -> {
-
+            scores();
             if (isOpen() || clickCount == 0)
                 return;
             clickCount--;
@@ -41,14 +41,16 @@ public class Tile extends StackPane {
                     if (!theSameButton(selected)) {
                         selected.close();
                         this.close();
+                    }else {
+                        selected.setDisable(true);
+                        this.button.setDisable(true);
                     }
-                    selected = null;
                     clickCount = 2;
+                    selected = null;
                 });
             }
         });
         close();
-        score--;
     }
     public boolean isOpen(){
         return button.getOpacity() == 0.2;
@@ -69,7 +71,7 @@ public class Tile extends StackPane {
     }
     public int scores(){
         score--;
-        return score;
+        return getScore();
     }
 
     public int getScore() {

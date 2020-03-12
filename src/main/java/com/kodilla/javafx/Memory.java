@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+
 public class Memory extends Application {
 
     private Image menuBackground = new Image( getClass().getResourceAsStream("/13.png"));
@@ -124,17 +125,7 @@ public class Memory extends Application {
 
     public static void main(String[] args) {
         launch(args);
-        MyButton myButton = new MyButton();
         Tile tile = new Tile(new ImageView("/" + 1 + ".png"),1);
-        System.out.println(tile.scores());
-        System.out.println(myButton.tileListEasy().size());
-        System.out.println(myButton.tileListEasy().get(0));
-        System.out.println(myButton.tileListEasy().get(1));
-        System.out.println(myButton.tileListEasy().get(2));
-        System.out.println(myButton.tileListEasy().get(3));
-        System.out.println(myButton.tileListEasy().get(0));
-        System.out.println(myButton.tileListEasy().get(1));
-        System.out.println(myButton.tileListEasy().get(2));
-        System.out.println(myButton.tileListEasy().get(3));
+        System.out.println(tile.getScore());
     }
 }

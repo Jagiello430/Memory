@@ -24,22 +24,19 @@ public class MyButton extends Button {
     }
 
     List<Tile> tileListMedium() {
-        for (int i = 1; i <= 12; i++) {
-            if (i <= 6) {
+        for (int j = 0; j <= 1; j ++) {
+            for (int i = 1; i <= 6; i++) {
                 tileListMedium.add(new Tile(new ImageView("/" + i + ".png"),i));
-            } else {
-                tileListMedium.add(new Tile(new ImageView("/" + (i - 6) + ".png"),i - 6));
             }
         }
         Collections.shuffle(tileListMedium);
         return tileListMedium;
     }
+
     List<Tile> tileListHard() {
-        for (int i = 1; i <= 20; i++) {
-            if (i <= 10) {
+        for (int j = 0; j <= 1; j ++) {
+            for (int i = 1; i <= 10; i++){
                 tileListHard.add(new Tile(new ImageView("/" + i + ".png"),i));
-            } else {
-                tileListHard.add(new Tile(new ImageView("/" + (i - 10) + ".png"),i - 10));
             }
         }
         Collections.shuffle(tileListHard);
